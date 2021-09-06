@@ -2,7 +2,7 @@ package br.com.onaya.bookstore.exceptions;
 
 public class StandardError {
 
-	private Long timeStamp;
+	private Long timestamp;
 	private Integer status;
 	private String error;
 	
