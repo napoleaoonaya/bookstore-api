@@ -7,5 +7,5 @@ import br.com.onaya.bookstore.domain.Categoria;
 
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Integer> {
-
+	
 }

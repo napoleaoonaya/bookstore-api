@@ -1,5 +1,8 @@
 package br.com.onaya.bookstore.resource;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.onaya.bookstore.domain.Categoria;
+import br.com.onaya.bookstore.dto.CategoriaDTO;
 import br.com.onaya.bookstore.service.CategoriaService;
 
 @RestController
@@ -21,6 +25,13 @@ public class CategoriaResource {
 	public ResponseEntity<Categoria> findById(@PathVariable Integer id){
 		Categoria obj = categoriaService.findById(id);
 		return ResponseEntity.ok().body(obj);
+	}
+	
+	@GetMapping
+	public ResponseEntity<List<CategoriaDTO>> findAll(){
+		List<Categoria> categorias = categoriaService.findAll();
+		List<CategoriaDTO> categoriaDTO = categorias.stream().map(obj -> new CategoriaDTO(obj)).collect(Collectors.toList());
+		return ResponseEntity.ok().body(categoriaDTO);
 	}
 	
 }

@@ -10,19 +10,19 @@ public class StandardError {
 		super();
 	}
 	
-	public StandardError(Long timeStamp, Integer status, String error) {
+	public StandardError(Long timestamp, Integer status, String error) {
 		super();
-		this.timeStamp = timeStamp;
+		this.timestamp = timestamp;
 		this.status = status;
 		this.error = error;
 	}
 
 	public Long getTimeStamp() {
-		return timeStamp;
+		return timestamp;
 	}
 
-	public void setTimeStamp(Long timeStamp) {
-		this.timeStamp = timeStamp;
+	public void setTimeStamp(Long timestamp) {
+		this.timestamp = timestamp;
 	}
 
 	public Integer getStatus() {
@@ -40,8 +40,5 @@ public class StandardError {
 	public void setError(String error) {
 		this.error = error;
 	}
-	
-	
-	
 	
 }
