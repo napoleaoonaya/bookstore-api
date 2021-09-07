@@ -20,7 +20,7 @@ public class DevConfig {
 	
 	@Bean
 	public boolean instanciaBaseDeDados() {
-		if(strategy.equals("create")) {
+		if(!strategy.equals("update")) {
 			dbService.instanciaBaseDeDados();
 		}
 		return false;
